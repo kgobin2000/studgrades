@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  <script src="js/jquery.tabledit.js"></script>
+  <script src="jquery.sortElements.js"></script>
+  <script src="main.js"></script>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Dashboard</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <td><li ><a href="#">Home</a></li></td>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+
+  </div>
+</nav>
+    <div class="container" style="margin-top:35px">
+        <h4>Student Information</h4>
+<div class="table-wrapper-scroll-y">
+        <table id="tabledit" class="table table-bordered table-striped table-hover pre-scrollable table-responsive">
+
+            <thead>
+                <tr class="myHead">
+                    <th>#</th>
+                    <th>Student ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Password</th>
+
+                </tr>
+            </thead>
+            <tbody id='tablebody'>
+              <script>
+              viewData();
+              </script>
+
+            </tbody>
+        </table>
+    </div>
+        <!-- Trigger the modal with a button -->
+<center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Insert</button></center>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <form method='POST' id="insert_form">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Insert Student</h4>
+      </div>
+      <div class="modal-body">
+
+            <div class="form-group">
+              <label for="studenid">Student ID</label>
+              <input  class="form-control" id="studentid" name="stud_id" aria-describedby="emailHelp" placeholder="Enter Student ID" required>
+              <small id="emailHelp" class="form-text text-muted">This is the unique identifier for the student</small>
+            </div>
+            <div class="form-group">
+              <label for="firstname">First Name</label>
+              <input class="form-control" id="firstname" name="f_name" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+              <label for="lastname">Last Name</label>
+              <input class="form-control" id="lastname" name="l_name" placeholder="Last Name"required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+            </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" name="submit" id="submit" >Insert</button></div>
+    </div>
+
+  </div>
+</div>
+    </div>
+
+
+
+</body>
+</html>

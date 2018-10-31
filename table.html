@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/jquery.tabledit.js"></script>
+  <script src="jquery.sortElements.js"></script>
+  <script src="main.js"></script>
+<table class="table table-striped table-bordered" id="example5">
+<thead>
+<tr>
+  <th>#</th>
+  <th>Student ID</th>
+  <th>Firstname</th>
+  <th>Lastname</th>
+</tr>
+ </thead>
+ <tbody>
+  <tr data-id="1">
+    <td class="tabledit-data">1</td>
+    <td class="tabledit-data">markcell</td>
+    <td class="tabledit-data">Celso</td>
+     <td class="tabledit-data">Marques</td>
+   </tr>
+    <tr data-id="2">
+      <td class="tabledit-data">2</td>
+       <td class="tabledit-data">dotz</td>
+       <td class="tabledit-data">Márcio</td>
+       <td class="tabledit-data">Quental</td>
+    </tr>
+    <tr data-id="3">
+      <td class="tabledit-data">3</td>
+       <td class="tabledit-data">zikospeed</td>
+        <td class="tabledit-data">António</td>
+        <td class="tabledit-data">Figueiredo</td>
+    </tr>
+  </tbody>
+  </table>
+  <button id='addRow'>add row </button>
+  </body>
+  </html>
+
+  <script>
+  $("#addRow").click(function() {
+  	var tableditTableName = '#example1';  // Identifier of table
+  	var newID = parseInt($(tableditTableName + " tr:last").attr("id")) + 1;
+  	var clone = $("table tr:last").clone();
+  	$(".tabledit-span", clone).text("");
+  	$(".tabledit-input", clone).val("");
+  	clone.prependTo("table");
+  	$(tableditTableName + " tbody tr:first").attr("id", newID);
+  	$(tableditTableName + " tbody tr:first td .tabledit-span.tabledit-identifier").text(newID);
+  	$(tableditTableName + " tbody tr:first td .tabledit-input.tabledit-identifier").val(newID);
+  	$(tableditTableName + " tbody tr:first td:last .tabledit-edit-button").trigger("click");
+  });
+  </script>
