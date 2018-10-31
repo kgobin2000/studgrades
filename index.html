@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
     <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
     <link href="css/font-awesome.css" rel="stylesheet"/>
 </head>
 <body>
@@ -30,10 +31,10 @@
 
   </div>
 </nav>
-    <div class="container" style="margin-top:35px">
-        <h4>Student Information</h4>
-<div class="table-wrapper-scroll-y">
-        <table id="tabledit" class="table table-bordered table-striped table-hover pre-scrollable table-responsive">
+    <div>
+
+
+        <table id="tabledit" class="table table-bordered  table-hover  table-responsive" >
 
             <thead>
                 <tr class="myHead">
@@ -41,6 +42,7 @@
                     <th>Student ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Class</th>
                     <th>Password</th>
 
                 </tr>
@@ -54,7 +56,7 @@
         </table>
     </div>
         <!-- Trigger the modal with a button -->
-<center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Insert</button></center>
+<center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-bottom:35px">Insert</button></center>
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -65,12 +67,12 @@
         <form method='POST' id="insert_form">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Insert Student</h4>
+        <h4 class="modal-title">Add Student</h4>
       </div>
       <div class="modal-body">
 
             <div class="form-group">
-              <label for="studenid">Student ID</label>
+              <label for="studentid">Student ID</label>
               <input  class="form-control" id="studentid" name="stud_id" aria-describedby="emailHelp" placeholder="Enter Student ID" required>
               <small id="emailHelp" class="form-text text-muted">This is the unique identifier for the student</small>
             </div>
@@ -83,6 +85,10 @@
               <input class="form-control" id="lastname" name="l_name" placeholder="Last Name"required>
             </div>
             <div class="form-group">
+              <label for="class">Class</label>
+              <input class="form-control" id="classroom" name="classroom" placeholder="Class"required>
+            </div>
+            <div class="form-group">
               <label for="password">Password</label>
               <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
             </div>
@@ -90,8 +96,8 @@
 
 
       </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" name="submit" id="submit" >Insert</button></div>
+      <div class="modal-footer" >
+        <button type="submit" class="btn btn-primary" name="submit" id="submit">Add Student</button></div>
     </div>
 
   </div>

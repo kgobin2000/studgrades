@@ -13,10 +13,11 @@ if($page=='view'){
     while($row = $result->fetch_assoc()){
         ?>
         <tr>
-              <td><?php echo $row['id'] ?></td>
+            <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['stud_id'] ?></td>
             <td><?php echo $row['f_name'] ?></td>
             <td><?php echo $row['l_name'] ?></td>
+            <td><?php echo $row['Class'] ?></td>
             <td><?php echo $row['password'] ?></td>
         </tr>
         <?php
@@ -32,7 +33,7 @@ if($page=='view'){
 
     if ($input['action'] == 'edit') {
 
-      $mysqli->query("UPDATE stud_info SET stud_id='" . $input['stud_id'] . "',f_name='" . $input['f_name'] . "', l_name='" . $input['l_name'] . "', password='" . $input['password'] . "' WHERE id='" . $input['id'] . "' ");
+      $mysqli->query("UPDATE stud_info SET stud_id='" . $input['stud_id'] . "',f_name='" . $input['f_name'] . "', l_name='" . $input['l_name'] . "', password='" . $input['password'] . "', class='" . $input['class'] . "' WHERE id='" . $input['id'] . "' ");
       //$mysqli->query("INSERT INTO stud_info (stud_id, f_name, l_name,password,deleted) VALUES ('" . $input['stud_id'] . "','" . $input['f_name'] . "','" . $input['l_name'] . "','" . $input['password'] . "','0')");
 
         } else if ($input['action'] == 'delete') {

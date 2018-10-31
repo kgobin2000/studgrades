@@ -104,7 +104,7 @@
             },
             columns: {
                 identifier: [0, 'id'],
-                editable: [[1, 'stud_id'],[2, 'f_name'],[3, 'l_name'],[4, 'password']]
+                editable: [[1, 'stud_id'],[2, 'f_name'],[3, 'l_name'],[4, 'class'],[5, 'password']]
             },
             onSuccess: function(data, textStatus, jqXHR) {
                 viewData()
@@ -126,12 +126,13 @@
     $(document).ready(function(){
      $('#insert_form').on("submit", function(event){
       event.preventDefault();
-      alert("this works!");
+
       var formdata = $('#insert_form').serialize();
       console.log(formdata);
         firstname = $('#firstname').val();
         lastname = $('#lastname').val();
         studentid=$('#studentid').val();
+        classroom=$('#classroom').val();
         password=$('#password').val();
         console.log(firstname,lastname,studentid,password);
        $.ajax({
