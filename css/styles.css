@@ -1,3 +1,19 @@
-table{
-  margin-top:80px;
+
+#divtable{
+  padding-bottom:20px;
+  padding-top:20px;
+  border:2px solid grey;
+  background-color:white;
+  opacity:0.9;
+
+}
+
+body{
+  background-image:url(/~khalidgobin/tablequickedit/bgimage1.jpg);
+}
+nav{
+  background-color:white;
+}
+th{
+  font-size:15px;
 }
