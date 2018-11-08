@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2018 at 12:26 AM
+-- Generation Time: Nov 08, 2018 at 06:05 PM
 -- Server version: 8.0.12
 -- PHP Version: 7.1.19
 
@@ -42,14 +42,8 @@ CREATE TABLE `stud_info` (
 --
 
 INSERT INTO `stud_info` (`id`, `stud_id`, `f_name`, `l_name`, `Class`, `password`) VALUES
-(105, 'johnd', 'John', 'Doe', '4-2\r\n', 'password'),
-(138, 'maryb', 'Mary', 'Bridgette', '5-2', 'password'),
-(139, 'chrysw', 'Chrystal', 'Wilfred', '1-2', 'password'),
-(140, 'khald', 'Khalid', 'Gobin', '5-2', 'password'),
-(141, 'chris', 'Christian', 'Richards', '6', 'password'),
-(142, 'indrj', 'Indra', 'Joylall', '2-2', 'password'),
-(143, 'kobyW', 'Koby', 'Wills', '4-1', 'password'),
-(144, 'keonj', 'Keon', 'Ramjit', '3-2', 'password');
+(2, 'johnd', 'John', 'Doe', '1-2', 'password'),
+(3, 'maryb', 'Mary', 'Bridgette', '5-1', 'password');
 
 -- --------------------------------------------------------
 
@@ -58,8 +52,9 @@ INSERT INTO `stud_info` (`id`, `stud_id`, `f_name`, `l_name`, `Class`, `password
 --
 
 CREATE TABLE `stud_rec` (
-  `stud_id` varchar(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `course` varchar(4) NOT NULL,
+  `id` int(11) NOT NULL,
+  `stud_id` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `course` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `t1` varchar(3) NOT NULL DEFAULT '-',
   `t2` varchar(3) NOT NULL DEFAULT '-',
   `t3` varchar(3) NOT NULL DEFAULT '-'
@@ -69,9 +64,23 @@ CREATE TABLE `stud_rec` (
 -- Dumping data for table `stud_rec`
 --
 
-INSERT INTO `stud_rec` (`stud_id`, `course`, `t1`, `t2`, `t3`) VALUES
-('johnd', 'MATH', '98', '', '87'),
-('maryb', 'SCIE', '56', '78', '-');
+INSERT INTO `stud_rec` (`id`, `stud_id`, `course`, `t1`, `t2`, `t3`) VALUES
+(93, 'johnd', 'Mathematics', '-', '-', '-'),
+(94, 'johnd', 'Integrated Science', '-', '-', '-'),
+(95, 'johnd', 'Biology', '-', '-', '-'),
+(96, 'johnd', 'Physics', '-', '-', '-'),
+(97, 'johnd', 'Chemistry', '-', '-', '-'),
+(98, 'johnd', 'Principles of Accounts', '-', '-', '-'),
+(99, 'johnd', 'Principles of Business', '-', '-', '-'),
+(100, 'johnd', 'Physical Education', '-', '-', '-'),
+(101, 'maryb', 'Mathematics', '-', '-', '-'),
+(102, 'maryb', 'Integrated Science', '-', '-', '-'),
+(103, 'maryb', 'Biology', '-', '-', '-'),
+(104, 'maryb', 'Physics', '-', '-', '-'),
+(105, 'maryb', 'Chemistry', '-', '-', '-'),
+(106, 'maryb', 'Principles of Accounts', '-', '-', '-'),
+(107, 'maryb', 'Principles of Business', '-', '-', '-'),
+(108, 'maryb', 'Physical Education', '-', '-', '-');
 
 -- --------------------------------------------------------
 
@@ -101,14 +110,17 @@ INSERT INTO `teach_info` (`teach_id`, `password`, `f_name`, `l_name`) VALUES
 -- Indexes for table `stud_info`
 --
 ALTER TABLE `stud_info`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `stud_id` (`stud_id`);
+  ADD PRIMARY KEY (`stud_id`),
+  ADD UNIQUE KEY `stud_id` (`stud_id`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `stud_rec`
 --
 ALTER TABLE `stud_rec`
-  ADD PRIMARY KEY (`stud_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`),
+  ADD KEY `stud_id` (`stud_id`);
 
 --
 -- Indexes for table `teach_info`
@@ -124,7 +136,23 @@ ALTER TABLE `teach_info`
 -- AUTO_INCREMENT for table `stud_info`
 --
 ALTER TABLE `stud_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `stud_rec`
+--
+ALTER TABLE `stud_rec`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `stud_rec`
+--
+ALTER TABLE `stud_rec`
+  ADD CONSTRAINT `stud_rec_ibfk_1` FOREIGN KEY (`stud_id`) REFERENCES `stud_info` (`stud_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
