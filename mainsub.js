@@ -52,7 +52,7 @@
                },
                columns: {
                    identifier: [0, 'id'],
-                   editable: [[3, 't1'],[4, 't2'],[5, 't3']]
+                   editable: [[2,'course'],[3, 'coursework1'],[4, 'midterm1'],[5, 'final1'],[6, 'coursework2'],[7, 'midterm2'],[8, 'final2'],[9, 'coursework3'],[10, 'midterm3'],[11, 'final3']]
                },
                onSuccess: function(data, textStatus, jqXHR) {
 
@@ -70,45 +70,6 @@
                }
            });
        };
-
-
-           $(document).ready(function(){
-            $('#insert_form').on("submit", function(event){
-             event.preventDefault();
-
-             var formdata = $('#insert_form').serialize();
-             console.log(formdata);
-               firstname = $('#course').val();
-               lastname = $('#t1').val();
-               studentid=$('#t2').val();
-               classroom=$('#t3').val();
-               password=$('#password').val();
-               console.log(firstname,lastname,studentid,password);
-              $.ajax({
-               url:"insert.php",
-               type:"POST",
-               data:{f_name:firstname,stud_id:studentid,l_name:lastname,password:password},
-               beforeSend:function(){
-                $('#insert').val("Inserting");
-               },
-               success:function(data){
-                 if (data ==1 )
-                 {
-                   alert("Username already taken");
-                 }
-                 else {
-
-
-                $('#insert_form')[0].reset();
-                $('#myModal').modal('hide');
-
-                viewData();
-                console.log(data);
-              }
-               }
-              });
-            })
-          })
 
 
           sortColumn = function(obj) {

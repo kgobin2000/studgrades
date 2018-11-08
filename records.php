@@ -83,7 +83,7 @@ $conn->close();
 </div>
 </div>
 <div id="myModalrec" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog  modal-lg">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -94,16 +94,26 @@ $conn->close();
       <div class="modal-body">
         <table id="tablerec" class="table table-hover table-responsive table-striped " >
         <thead>
-            <tr class="myHead">
-                <th>#</th>
-                <th>Student ID</th>
-                <th>Course ID</th>
-                <th>T1</th>
-                <th>T2</th>
-                <th>T3</th>
+
+
+            <tr>
+              <th>#</th>
+              <th>Student ID</th>
+              <th>Course</th>
+              <th>Coursework</th>
+              <th>Midterm</th>
+              <th>Final</th>
+              <th>Coursework</th>
+              <th>Midterm</th>
+              <th>Final</th>
+              <th>Coursework</th>
+              <th>Midterm</th>
+              <th>Final</th>
+          
 
 
             </tr>
+
         </thead>
         <tbody id='tablebodyrec'>
           <script>

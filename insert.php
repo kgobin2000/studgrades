@@ -31,15 +31,19 @@
     else {
 
 
-    $sql = "INSERT INTO stud_info (stud_id, f_name, l_name, Class, password) VALUES ('$stud_id','$f_name','$l_name','$class','$password');";
-    $sql .= "INSERT INTO stud_rec (stud_id, course, t1, t2, t3) VALUES ('$stud_id','Mathematics','-','-','-');";
-    $sql .= "INSERT INTO stud_rec (stud_id, course, t1, t2, t3) VALUES ('$stud_id','Integrated Science','-','-','-');";
-    $sql .= "INSERT INTO stud_rec (stud_id, course, t1, t2, t3) VALUES ('$stud_id','Biology','-','-','-');";
-    $sql .= "INSERT INTO stud_rec (stud_id, course, t1, t2, t3) VALUES ('$stud_id','Physics','-','-','-');";
-    $sql .= "INSERT INTO stud_rec (stud_id, course, t1, t2, t3) VALUES ('$stud_id','Chemistry','-','-','-');";
-    $sql .= "INSERT INTO stud_rec (stud_id, course, t1, t2, t3) VALUES ('$stud_id','Principles of Accounts','-','-','-');";
-    $sql .= "INSERT INTO stud_rec (stud_id, course, t1, t2, t3) VALUES ('$stud_id','Principles of Business','-','-','-');";
-    $sql .= "INSERT INTO stud_rec (stud_id, course, t1, t2, t3) VALUES ('$stud_id','Physical Education','-','-','-');";
+    $sql =  "INSERT INTO stud_info (stud_id, f_name, l_name, Class, password) VALUES ('$stud_id','$f_name','$l_name','$class','$password');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Mathematics','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Integrated Science','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Biology','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Physics','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Chemistry','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Principles of Accounts','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Principles of Business','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Physical Education','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Religious Education','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','Moral Education','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','English A','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, midterm1, final1,coursework2, midterm2, final2,coursework3, midterm3, final3) VALUES ('$stud_id','English B','','','','','','','','','');";
 
     $result=mysqli_multi_query($conn,$sql);
 

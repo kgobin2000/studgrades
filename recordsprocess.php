@@ -18,9 +18,16 @@ if($page=='view'){
             <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['stud_id'] ?></td>
             <td><?php echo $row['course'] ?></td>
-            <td><?php echo $row['t1'] ?></td>
-            <td><?php echo $row['t2'] ?></td>
-            <td><?php echo $row['t3'] ?></td>
+            <td><?php echo $row['coursework1'] ?></td>
+            <td><?php echo $row['midterm1'] ?></td>
+            <td><?php echo $row['final1'] ?></td>
+            <td><?php echo $row['coursework2'] ?></td>
+            <td><?php echo $row['midterm2'] ?></td>
+            <td><?php echo $row['final2'] ?></td>
+            <td><?php echo $row['coursework3'] ?></td>
+            <td><?php echo $row['midterm3'] ?></td>
+            <td><?php echo $row['final3'] ?></td>
+
         </tr>
         <?php
     }
@@ -35,7 +42,9 @@ if($page=='view'){
 
     if ($input['action'] == 'edit') {
 
-      $mysqli->query("UPDATE stud_rec SET t1='" . $input['t1'] . "',t2='" . $input['t2'] . "', t3='" . $input['t3'] . "' WHERE id='" . $input['id']. "' ");
+      $mysqli->query("UPDATE stud_rec SET course='".$input['course']."',coursework1='" . $input['coursework1'] . "',midterm1='" . $input['midterm1'] . "', final1='" . $input['final1'] . "',
+        coursework2='" . $input['coursework2'] . "',midterm2='" . $input['midterm2'] . "', final2='" . $input['final2'] . "',
+        coursework3='" . $input['coursework3'] . "',midterm3='" . $input['midterm3'] . "', final3='" . $input['final3'] . "' WHERE id='" . $input['id']. "' ");
       //$mysqli->query("INSERT INTO stud_info (stud_id, f_name, l_name,password,deleted) VALUES ('" . $input['stud_id'] . "','" . $input['f_name'] . "','" . $input['l_name'] . "','" . $input['password'] . "','0')");
 
         } else if ($input['action'] == 'delete') {
