@@ -39,9 +39,9 @@ if($page=='view'){
       //$mysqli->query("INSERT INTO stud_info (stud_id, f_name, l_name,password,deleted) VALUES ('" . $input['stud_id'] . "','" . $input['f_name'] . "','" . $input['l_name'] . "','" . $input['password'] . "','0')");
 
         } else if ($input['action'] == 'delete') {
-        $mysqli->query("DELETE FROM stud_info WHERE id='" . $input['id'] . "'");
+        $mysqli->query("DELETE FROM stud_rec WHERE stud_info='" . $input['stud_info'] . "'");
     } else if ($input['action'] == 'restore') {
-        $mysqli->query("UPDATE stud_info SET deleted=0 WHERE id='" . $input['id'] . "'");
+        $mysqli->query("UPDATE stud_rec SET deleted=0 WHERE id='" . $input['id'] . "'");
     } else if ($input['action'] === 'add') {
       $a=$input['stud_id'];
       $b=$input['f_name'];

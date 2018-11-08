@@ -134,11 +134,11 @@
         studentid=$('#studentid').val();
         classroom=$('#classroom').val();
         password=$('#password').val();
-        console.log(firstname,lastname,studentid,password);
+        console.log(firstname,lastname,studentid,classroom,password);
        $.ajax({
         url:"insert.php",
         type:"POST",
-        data:{f_name:firstname,stud_id:studentid,l_name:lastname,password:password},
+        data:{f_name:firstname,stud_id:studentid,l_name:lastname,Class:classroom,password:password},
         beforeSend:function(){
          $('#insert').val("Inserting");
         },

@@ -16,7 +16,7 @@
     <link href="css/font-awesome.css" rel="stylesheet"/>
 </head>
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Dashboard</a>
@@ -30,13 +30,23 @@
 
   </div>
 </nav>
+
+
+<div class="well page-header">
+  <blockquote class="blockquote">This page allows you to view and edit records</blockquote>
+</div>
 </br>
 </br>
 </br>
 </br>
 
-<div id="divtable">
-<table class="table table-hover table-responsive ">
+<div id="divtable" class="container">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Student Records</h3>
+  </div>
+<div class="panel-body">
+<table class="table table-hover table-responsive table-striped" id="overview">
 <thead>
 <tr>
     <th>ID</td>
@@ -59,7 +69,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr id=".$row["stud_id"]."><td> " . $row["stud_id"]. " </td> <td>" . $row["f_name"]. " " . $row["l_name"]. "   </td><td>  " . $row["Class"]. "</td><td>";?><button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal" onclick="viewData(this.parentNode.parentNode.id)">Open Records</button>
+        echo "<tr id=".$row["stud_id"]."><td> " . $row["stud_id"]. " </td> <td>" . $row["f_name"]. " " . $row["l_name"]. "   </td><td>  " . $row["Class"]. "</td><td>";?><button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModalrec" onclick="viewData(this.parentNode.parentNode.id)">Open Records</button>
 <?php echo"</td></tr>";
     }
 } else {
@@ -70,8 +80,10 @@ $conn->close();
 </tbody>
 </table>
 </div>
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+</div>
+</div>
+<div id="myModalrec" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -80,7 +92,7 @@ $conn->close();
         <h4 class="modal-title">Student Information</h4>
       </div>
       <div class="modal-body">
-        <table id="tablerec" class="table table-hover table-responsive " >
+        <table id="tablerec" class="table table-hover table-responsive table-striped " >
         <thead>
             <tr class="myHead">
                 <th>#</th>
@@ -103,7 +115,6 @@ $conn->close();
 
 
 
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -112,5 +123,8 @@ $conn->close();
 
   </div>
 </div>
+
+
+
 
 </body>
