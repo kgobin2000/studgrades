@@ -52,7 +52,7 @@
                },
                columns: {
                    identifier: [0, 'id'],
-                   editable: [[2,'course'],[3, 'coursework1'],[4, 'midterm1'],[5, 'final1'],[6, 'coursework2'],[7, 'midterm2'],[8, 'final2'],[9, 'coursework3'],[10, 'midterm3'],[11, 'final3']]
+                   editable: [[3, 'coursework1'],[4, 'exam1'],[5, 'final1'],[6, 'coursework2'],[7, 'exam2'],[8, 'final2'],[9, 'coursework3'],[10, 'exam3'],[11, 'final3']]
                },
                onSuccess: function(data, textStatus, jqXHR) {
 

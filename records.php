@@ -24,7 +24,7 @@
     <ul class="nav navbar-nav navbar-right">
       <td><li ><a href="index.html">Home</a></li></td>
       <li><a href="records.php">Student Records</a></li>
-      <li><a href="#">Page 2</a></li>
+      <li><a href="addteacher.php">Teachers</a></li>
       <li><a href="#">Page 3</a></li>
     </ul>
 
@@ -69,7 +69,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr id=".$row["stud_id"]."><td> " . $row["stud_id"]. " </td> <td>" . $row["f_name"]. " " . $row["l_name"]. "   </td><td>  " . $row["Class"]. "</td><td>";?><button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModalrec" onclick="viewData(this.parentNode.parentNode.id)">Open Records</button>
+        echo "<tr id=".$row["stud_id"]."><td> " . $row["stud_id"]. " </td> <td>" . $row["f_name"]. " " . $row["l_name"]. "   </td><td>  " . $row["Class"]. "</td><td>";?><button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModalrec" onclick="viewData(this.parentNode.parentNode.id)">Open Records</button>
 <?php echo"</td></tr>";
     }
 } else {
@@ -101,15 +101,15 @@ $conn->close();
               <th>Student ID</th>
               <th>Course</th>
               <th>Coursework</th>
-              <th>Midterm</th>
+              <th>Exam</th>
               <th>Final</th>
               <th>Coursework</th>
-              <th>Midterm</th>
+              <th>Exam</th>
               <th>Final</th>
               <th>Coursework</th>
-              <th>Midterm</th>
+              <th>Exam</th>
               <th>Final</th>
-          
+
 
 
             </tr>
