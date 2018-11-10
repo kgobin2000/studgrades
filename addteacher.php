@@ -22,7 +22,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.html">Dashboard</a>
+      <a class="navbar-brand" href="index.html">Student Krud</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <td><li ><a href="index.html">Home</a></li></td>
@@ -96,9 +96,9 @@
       <div class="modal-body">
 
             <div class="form-group">
-              <label for="studentid">Teacher ID</label>
-              <input  class="form-control" id="studentid" name="stud_id" aria-describedby="emailHelp" placeholder="Enter Student ID" required>
-              <small id="emailHelp" class="form-text text-muted">This is the unique identifier for the teachert</small>
+              <label for="teacherid">Teacher ID</label>
+              <input  class="form-control" id="teacherid" name="teacherid" aria-describedby="emailHelp" placeholder="Enter Teacher ID" required>
+              <small id="emailHelp" class="form-text text-muted">This is the unique identifier for the teacher</small>
             </div>
             <div class="form-group">
               <label for="firstname">First Name</label>
@@ -109,8 +109,22 @@
               <input class="form-control" id="lastname" name="l_name" placeholder="Last Name"required>
             </div>
             <div class="form-group">
-              <label for="class">Course</label>
-              <input class="form-control" id="course" name="course" placeholder="course"required>
+              <label for="sel1">Course</label>
+              <select class="form-control" id="course">
+                  <option>Mathematics</option>
+                  <option>Integrated Science</option>
+                  <option>Biology</option>
+                  <option>Physics</option>
+                  <option>Chemistry</option>
+                  <option>Principles of Accounts</option>
+                  <option>Principles of Business</option>
+                  <option>Physical Education</option>
+                  <option>Religious Education</option>
+                  <option>Moral Education</option>
+                  <option>English A</option>
+                  <option>English B</option>
+                  <option>All</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="password">Password</label>
