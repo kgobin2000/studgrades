@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<link rel="shortcut icon" href="">
   <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
   <script src="js/jquery.tabledit.js"></script>
