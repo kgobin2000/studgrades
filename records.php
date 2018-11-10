@@ -17,19 +17,18 @@
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Student Krud</a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Student Krud</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <td><li ><a href="index.html">Home</a></li></td>
+        <li><a href="records.php">Student Records</a></li>
+          <li><a href="addteacher.php">Teachers</a></li>
+        <li><a href="teacherlogin.php">Teacher login</a></li>
+      </ul>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <td><li ><a href="index.html">Home</a></li></td>
-      <li><a href="records.php">Student Records</a></li>
-      <li><a href="addteacher.php">Teachers</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
-
-  </div>
-</nav>
+  </nav>
 
 
 <div class="well page-header">
