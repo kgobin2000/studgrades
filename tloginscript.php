@@ -27,9 +27,11 @@
          {
               $lastname = $row['lastname'];
               $firstname = $row['firstname'];
+              $course=$row['courseid'];
              $_SESSION['teach_id'] = $teach_id;
              $_SESSION['lastname'] = $lastname;
              $_SESSION['firstname'] = $firstname;
+             $_SESSION['course'] = $course;
               die("1");
            }
            else
