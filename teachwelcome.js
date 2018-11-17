@@ -104,7 +104,7 @@
             },
             columns: {
                 identifier: [0, 'id'],
-                editable: [[3, 'coursework1'],[4, 'exam1'],[5, 'final1'],[6, 'coursework2'],[7, 'exam2'],[8, 'final2'],[9, 'coursework3'],[10, 'exam3'],[11, 'final3']],
+                editable: [[6, 'coursework1'],[7, 'exam1'],[8, 'final1'],[9, 'coursework2'],[10, 'exam2'],[11, 'final2'],[12, 'coursework3'],[13, 'exam3'],[14, 'final3']],
 
                 //[4, 'courseid','{"generalmath": "Mathematics", "integratedscie": "Integrated Science", "biology": "Biology","physics": "Physics", "chemistry": "Chemistry", "poa": "Principles of Accounts","pob": "Principles of Business", "pe": "Physical Education", "re": "Religious Education","moraled": "Moral Education", "language": "English A", "literature": "English B", "ALL":"ALL"}'],
 

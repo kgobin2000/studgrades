@@ -108,7 +108,7 @@
             </div>
             <div class="form-group">
               <label for="sel1">Course</label>
-              <select class="form-control" id="course">
+              <select class="form-control" id="course" multiple size="10">
                   <option>Mathematics</option>
                   <option>Integrated Science</option>
                   <option>Biology</option>

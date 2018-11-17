@@ -7,6 +7,7 @@
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'];
   $course = $_POST['course'];
+  $course=serialize($course);
   $host = "127.0.0.1";
   $dbusername = "root";
   $dbpassword = "password";

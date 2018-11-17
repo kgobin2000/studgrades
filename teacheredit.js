@@ -136,6 +136,7 @@
         lastname = $('#lastname').val();
         teacherid=$('#teacherid').val();
         course=$('#course').val();
+        console.log(course);
         password=$('#password').val();
         console.log(firstname,lastname,teacherid,course,password);
        $.ajax({

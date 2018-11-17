@@ -11,6 +11,20 @@ $page = isset($_GET['p'])? $_GET['p'] : '' ;
 if($page=='view'){
     $result = $mysqli->query("SELECT * FROM admin");
     while($row = $result->fetch_assoc()){
+      $course=unserialize($row['courseid']);
+      if (is_array($course)){
+        ?>
+        <tr>
+            <td><?php echo $row['id'] ?></td>
+            <td><?php echo $row['teach_id'] ?></td>
+            <td><?php echo $row['firstname'] ?></td>
+            <td><?php echo $row['lastname'] ?></td>
+          <td><?php   foreach($course as $key =>$value){echo " $value ";}?></td>
+            <td><?php echo $row['password'] ?></td>
+        </tr>
+<?php
+     }
+     else{
         ?>
         <tr>
             <td><?php echo $row['id'] ?></td>
@@ -22,6 +36,7 @@ if($page=='view'){
         </tr>
         <?php
     }
+}
 } else{
 
     // Basic example of PHP script to handle with jQuery-Tabledit plug-in.

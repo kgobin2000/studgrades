@@ -3,7 +3,8 @@ session_start();
 
 if ( isset( $_SESSION['teach_id']) && isset( $_SESSION['firstname']) && isset( $_SESSION['lastname']) && isset( $_SESSION['course']) )
 {
-  $course= $_SESSION['course'];
+  $course=unserialize($_SESSION['course']);
+  $course1=$_SESSION['course'];
 }
 else
 {
@@ -18,12 +19,60 @@ if (mysqli_connect_errno()) {
 
 $page = isset($_GET['p'])? $_GET['p'] : '' ;
 if($page=='view'){
-    $result = $mysqli->query("SELECT * FROM stud_rec WHERE course='$course'");
+    if(is_array($course))
+    {
+
+      /*foreach($course as $key =>$value)
+      {
+      $sql.="SELECT * FROM stud_rec WHERE course='$course[$key]'";
+    }*/
+
+    //finish
+    $size=sizeof($course);
+    for ($i=0;$i<$size;$i++)
+    {
+      $result = $mysqli->query("SELECT * FROM stud_rec WHERE course='$course[$i]'");
+      while($row = $result->fetch_assoc()){
+              $newresult = $mysqli->query("SELECT * FROM stud_info WHERE stud_id=".$row['stud_id']."");
+              $row1=$newresult->fetch_assoc();
+          ?>
+          <tr>
+              <td><?php echo $row['id'] ?></td>
+              <td><?php echo $row['stud_id'] ?></td>
+              <td><?php echo $row1['f_name'] ?></td>
+                <td><?php echo $row1['l_name'] ?></td>
+                  <td><?php echo $row1['Class'] ?></td>
+              <td><?php echo $row['course'] ?></td>
+              <td><?php echo $row['coursework1'] ?></td>
+            <td><?php echo $row['exam1'] ?></td>
+              <td><?php echo $row['final1'] ?></td>
+              <td><?php echo $row['coursework2'] ?></td>
+            <td><?php echo $row['exam2'] ?></td>
+              <td><?php echo $row['final2'] ?></td>
+              <td><?php echo $row['coursework3'] ?></td>
+            <td><?php echo $row['exam3'] ?></td>
+              <td><?php echo $row['final3'] ?></td>
+          </tr>
+          <?php
+      }
+    }
+  }
+
+    else {
+
+
+    $result = $mysqli->query("SELECT * FROM stud_rec WHERE course='$course1'");
+
     while($row = $result->fetch_assoc()){
+            $newresult = $mysqli->query("SELECT * FROM stud_info WHERE stud_id=".$row['stud_id']."");
+            $row1=$newresult->fetch_assoc();
         ?>
         <tr>
             <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['stud_id'] ?></td>
+            <td><?php echo $row1['f_name'] ?></td>
+              <td><?php echo $row1['l_name'] ?></td>
+                <td><?php echo $row1['Class'] ?></td>
             <td><?php echo $row['course'] ?></td>
             <td><?php echo $row['coursework1'] ?></td>
           <td><?php echo $row['exam1'] ?></td>
@@ -37,7 +86,9 @@ if($page=='view'){
         </tr>
         <?php
     }
-} else{
+  }
+}
+ else{
 
     // Basic example of PHP script to handle with jQuery-Tabledit plug-in.
     // Note that is just an example. Should take precautions such as filtering the input data.

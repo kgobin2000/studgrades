@@ -3,6 +3,9 @@ session_start();
 
 if ( isset( $_SESSION['teach_id']) && isset( $_SESSION['firstname']) && isset( $_SESSION['lastname']) && isset( $_SESSION['course']) )
 {
+
+  $course=unserialize($_SESSION['course']);
+
 }
 else
 {
@@ -48,7 +51,21 @@ echo "<script>window.location.replace('teachlogin.php');</script>";
 
 
    <div class="well page-header">
-     <blockquote class="blockquote">Welcome <?php echo $_SESSION['firstname'], ' ', $_SESSION['lastname'];?> !  Permissions: <?php echo $_SESSION['course'];?></blockquote>
+     <blockquote class="blockquote">Welcome <?php echo $_SESSION['firstname'], ' ', $_SESSION['lastname'];?> !   Subjects:
+       <?php
+       if (is_array($course)){
+
+     foreach($course as $key =>$value)
+     {
+       echo " $value ";
+     }
+    }
+    else
+   {
+     echo $_SESSION['course'];
+   }
+   ?>
+ </blockquote>
    </div>
 
  </br></br>
@@ -64,6 +81,9 @@ echo "<script>window.location.replace('teachlogin.php');</script>";
 <tr class="myHead">
              <th>#</th>
              <th>Student ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+             <th>Class</th>
              <th>Course</th>
              <th>Coursework</th>
              <th>Exam</th>
