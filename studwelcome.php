@@ -1,33 +1,18 @@
 <?php
 session_start();
 
-if ( isset( $_SESSION['teach_id']) && isset( $_SESSION['firstname']) && isset( $_SESSION['lastname']) && isset( $_SESSION['course']) )
+if ( isset( $_SESSION['stud_id']) && isset( $_SESSION['f_name']) && isset( $_SESSION['l_name']) )
 {
 
-  $course=unserialize($_SESSION['course']);
+
 
 }
 else
 {
-echo "<script>window.location.replace('teacherlogin.php');</script>";
+echo "<script>window.location.replace('studentlogin.php');</script>";
 }
 ?>
 
-<?php
-  $host = "127.0.0.1";
-  $dbusername = "root";
-  $dbpassword = "password";
-  $dbname = "regis";
-  $connect = mysqli_connect($host, $dbusername, $dbpassword, $dbname);
-
-  if (mysqli_connect_error())
-  {
-    die('Connect error('.mysqli_connect_errno().')'
-    .mysqli_connect_error());
-  }
-
-
- ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,7 +21,7 @@ echo "<script>window.location.replace('teacherlogin.php');</script>";
         <script src="js/bootstrap.js"></script>
       <script src="js/jquery.tabledit.js"></script>
       <script src="jquery.sortElements.js"></script>
-        <script src="teachwelcome.js"></script>
+        <script src="studwelcome.js"></script>
       <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,30 +38,18 @@ echo "<script>window.location.replace('teacherlogin.php');</script>";
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">Student Krud</a>
+            <a class="navbar-brand" href="studwelcome.html">Student Krud</a>
           </div>
           <ul class="nav navbar-nav navbar-right">
-            <td><li ><a href="teachwelcome.php">Home</a></li></td>
-            <li><a href="teachaccount.php">Your Account</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <td><li ><a href="studwelcome.php">Home</a></li></td>
+            <li><a href="#">Your Account</a></li>
+            <li><a href="studlogout.php">Logout</a></li>
           </ul>
         </div>
       </nav>
    <div class="well page-header">
-     <blockquote class="blockquote">Welcome <?php echo $_SESSION['firstname'], ' ', $_SESSION['lastname'];?> !   Subjects:
-       <?php
-       if (is_array($course)){
+     <blockquote class="blockquote">Welcome <?php echo $_SESSION['f_name'], ' ', $_SESSION['l_name'];?> !
 
-     foreach($course as $key =>$value)
-     {
-       echo " $value ";
-     }
-    }
-    else
-   {
-     echo $_SESSION['course'];
-   }
-   ?>
  </blockquote>
    </div>
 
@@ -92,11 +65,8 @@ echo "<script>window.location.replace('teacherlogin.php');</script>";
      <thead>
 <tr class="myHead">
              <th>#</th>
-             <th>Student ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-             <th>Class</th>
-             <th>Course</th>
+
+            <th>Course</th>
              <th>Coursework</th>
              <th>Exam</th>
              <th>Final</th>

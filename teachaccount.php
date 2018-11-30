@@ -9,7 +9,7 @@ if ( isset( $_SESSION['teach_id']) && isset( $_SESSION['firstname']) && isset( $
 }
 else
 {
-echo "<script>window.location.replace('teacherlogin.php');</script>";
+echo "<script>window.location.replace('teachlogin.php');</script>";
 }
 ?>
 
@@ -31,12 +31,34 @@ echo "<script>window.location.replace('teacherlogin.php');</script>";
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+    .panel{
+      width:500px;
+      margin: auto;
+      text-align: center;
+      opacity:0.9;
+
+  }
+
+  .panel-heading{
+    font-size: 18px;
+  }
+
+input{
+    text-align: center;
+
+  }
+.glyphicon {
+  font-size: 25px;
+}
+
+    </style>
     <link rel="shortcut icon" href="">
       <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
       <script src="js/jquery.tabledit.js"></script>
       <script src="jquery.sortElements.js"></script>
-        <script src="teachwelcome.js"></script>
+        <script src="teachaccounts.js"></script>
       <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,67 +80,37 @@ echo "<script>window.location.replace('teacherlogin.php');</script>";
           <ul class="nav navbar-nav navbar-right">
             <td><li ><a href="teachwelcome.php">Home</a></li></td>
             <li><a href="teachaccount.php">Your Account</a></li>
-            <li><a href="logout.php">Logout</a></li>
+              <li><a href="logout.php">Logout</a></li>
           </ul>
         </div>
       </nav>
-   <div class="well page-header">
-     <blockquote class="blockquote">Welcome <?php echo $_SESSION['firstname'], ' ', $_SESSION['lastname'];?> !   Subjects:
-       <?php
-       if (is_array($course)){
+      </br></br></br></br></br></br></br></br></br>
 
-     foreach($course as $key =>$value)
-     {
-       echo " $value ";
-     }
-    }
-    else
-   {
-     echo $_SESSION['course'];
-   }
-   ?>
- </blockquote>
-   </div>
-
- </br></br>
- <div id="divtable" class="container"">
- <div class="panel panel-primary">
-   <div class="panel-heading">
-     <h3 class="panel-title">Records</h3>
-   </div>
-   <div class="panel-body">
- <table id="tabledit" class="table table-hover table-responsive  table-striped" >
-
-     <thead>
-<tr class="myHead">
-             <th>#</th>
-             <th>Student ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-             <th>Class</th>
-             <th>Course</th>
-             <th>Coursework</th>
-             <th>Exam</th>
-             <th>Final</th>
-             <th>Coursework</th>
-             <th>Exam</th>
-             <th>Final</th>
-             <th>Coursework</th>
-             <th>Exam</th>
-             <th>Final</th>
-
-</tr>
-     </thead>
-     <tbody id='tablebody'>
-       <script>
-       viewData();
-       </script>
-
-     </tbody>
- </table>
+      <div class="panel panel-primary">
+  <div class="panel-heading">Change Password</div>
+  <div class="panel-body">
+    <form method="POST" id="changepass">
+</br>
+</br>
+  <div class="form-group">
+    <label for="currentpassword">Current Password:</label>
+    <input type="password" class="form-control" id="password">
+  </div>
+</br>
+</br>
+  <div class="form-group">
+    <label for="pwd">New Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+</br>
+  <input type="checkbox" onclick="showpass()">  Show Password
+</br>
+</br>
 </div>
- </body>
-
-
-
-</html>
+<div class="panel-footer">
+  <button type="submit" class=" glyphicon glyphicon-floppy-saved"></button>
+</form>
+  </div>
+</div>
+    </body>
+    </html>

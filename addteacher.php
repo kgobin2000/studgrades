@@ -23,10 +23,11 @@
         <a class="navbar-brand" href="index.html">Student Krud</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <td><li ><a href="index.html">Home</a></li></td>
+        <td><li ><a href="index.html">Students</a></li></td>
         <li><a href="records.php">Student Records</a></li>
           <li><a href="addteacher.php">Teachers</a></li>
-        <li><a href="teacherlogin.php">Teacher login</a></li>
+            <li><a href="teacherlogin.php">Teacher login</a></li>
+        <li><a href="studentlogin.php">Student login</a></li>
       </ul>
     </div>
   </nav>
@@ -42,7 +43,7 @@
 </br>
 </br>
 </br>
-<div id="divtable" class="container"">
+<div id="divtable" class="container">
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">Teachers</h3>
@@ -109,6 +110,7 @@
             <div class="form-group">
               <label for="sel1">Course</label>
               <select class="form-control" id="course" multiple size="10">
+                  option>None</option>
                   <option>Mathematics</option>
                   <option>Integrated Science</option>
                   <option>Biology</option>
@@ -121,7 +123,26 @@
                   <option>Moral Education</option>
                   <option>English A</option>
                   <option>English B</option>
-                  <option>All</option>
+              </select>
+            </div>
+            <div class="checkbox" id="checkboxes">
+              <label><input type="checkbox" value="">Form Teacher</label>
+            </div>
+            <div class="form-group" id="classes" style="display:none;">
+              <label for="sel12">Class</label>
+              <select class="form-control" id="class" multiple size="10">
+                  option>1-1</option>
+                  <option>1-2</option>
+                  <option>2-1</option>
+                  <option>2-2</option>
+                  <option>3-1</option>
+                  <option>3-2</option>
+                  <option>4-1</option>
+                  <option>4-2</option>
+                  <option>5-1</option>
+                  <option>5-2</option>
+                  <option>L6</option>
+                  <option>U6</option>
               </select>
             </div>
             <div class="form-group">
