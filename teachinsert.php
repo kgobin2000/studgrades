@@ -4,10 +4,12 @@
 
   $teacherid = $_POST['teacherid'];
   $password = $_POST['password'];
+  $formteach = $_POST['formteach'];
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'];
   $course = $_POST['course'];
   $course=serialize($course);
+  $formteach=serialize($formteach);
   $host = "127.0.0.1";
   $dbusername = "root";
   $dbpassword = "password";
@@ -32,7 +34,8 @@
     else {
 
 
-    $sql =  "INSERT INTO admin (teach_id, firstname, lastname, courseid, password) VALUES ('$teacherid','$firstname','$lastname','$course','$password');";
+
+    $sql =  "INSERT INTO admin (teach_id, firstname, lastname, courseid, password,formteacher) VALUES ('$teacherid','$firstname','$lastname','$course','$password','$formteach');";
 
     $result=mysqli_query($conn,$sql);
 

@@ -104,7 +104,7 @@
             },
             columns: {
                 identifier: [0, 'id'],
-                editable: [[1, 'teach_id'],[2, 'firstname'],[3, 'lastname'], [5, 'password']],
+                editable: [[1, 'teach_id'],[2, 'firstname'],[3, 'lastname'], [5, 'password'],[6, 'formteacher']],
 
                 //[4, 'courseid','{"generalmath": "Mathematics", "integratedscie": "Integrated Science", "biology": "Biology","physics": "Physics", "chemistry": "Chemistry", "poa": "Principles of Accounts","pob": "Principles of Business", "pe": "Physical Education", "re": "Religious Education","moraled": "Moral Education", "language": "English A", "literature": "English B", "ALL":"ALL"}'],
 
@@ -138,11 +138,18 @@
         course=$('#course').val();
         console.log(course);
         password=$('#password').val();
-        console.log(firstname,lastname,teacherid,course,password);
+        var x = document.getElementById("c1").checked;
+        if(x=='false'){
+        formteach=$('#class').val();
+        }
+        else {
+        formteach=$('#class').val();
+        }
+        console.log(firstname,lastname,teacherid,course,password,x,formteach);
        $.ajax({
         url:"teachinsert.php",
         type:"POST",
-        data:{firstname:firstname,teacherid:teacherid,lastname:lastname,course:course,password:password},
+        data:{firstname:firstname,teacherid:teacherid,lastname:lastname,course:course,password:password,formteach:formteach},
         beforeSend:function(){
          $('#insert').val("Inserting");
         },
@@ -165,10 +172,23 @@
    })
 
 
-   $(document).ready(function(){
-       $("#checkboxes").click(function(){
-           $("#classes").toggle();
-       });
+  //$(document).ready(function(){
+   //$("#checkboxes").click(function(){
+  //     $("#classes").toggle();
+  //     });
 
-   });
-   </script>
+   //});
+   function showMe (box) {
+
+       var chboxs = document.getElementsByName("c1");
+       var vis = "none";
+       for(var i=0;i<chboxs.length;i++) {
+           if(chboxs[i].checked){
+            vis = "block";
+               break;
+           }
+       }
+       document.getElementById(box).style.display = vis;
+
+
+   }

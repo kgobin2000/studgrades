@@ -12,32 +12,63 @@ if($page=='view'){
     $result = $mysqli->query("SELECT * FROM admin");
     while($row = $result->fetch_assoc()){
       $course=unserialize($row['courseid']);
-      if (is_array($course)){
+      $formteacher=unserialize($row['formteacher']);
+      if (is_array($course)==true && is_array($formteacher)==true ){
         ?>
         <tr>
             <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['teach_id'] ?></td>
             <td><?php echo $row['firstname'] ?></td>
             <td><?php echo $row['lastname'] ?></td>
-          <td><?php   foreach($course as $key =>$value){echo " $value ";}?></td>
+          <td><?php foreach($course as $key =>$value){echo " $value ";}?></td>
             <td><?php echo $row['password'] ?></td>
+            <td><?php foreach($formteacher as $key =>$value){echo " $value ";}?></td>
         </tr>
 <?php
      }
-     else{
-        ?>
-        <tr>
-            <td><?php echo $row['id'] ?></td>
-            <td><?php echo $row['teach_id'] ?></td>
-            <td><?php echo $row['firstname'] ?></td>
-            <td><?php echo $row['lastname'] ?></td>
-          <td><?php echo $row['courseid'] ?></td>
-            <td><?php echo $row['password'] ?></td>
-        </tr>
-        <?php
-    }
+     else if (is_array($course)==true && is_array($formteacher)==false ){
+       ?>
+       <tr>
+       <td><?php echo $row['id'] ?></td>
+       <td><?php echo $row['teach_id'] ?></td>
+       <td><?php echo $row['firstname'] ?></td>
+       <td><?php echo $row['lastname'] ?></td>
+     <td><?php foreach($course as $key =>$value){echo " $value ";}?></td>
+       <td><?php echo $row['password'] ?></td>
+       <td><?php echo $row['formteacher']?></td>
+   </tr>
+   <?php
+     }
+     else if (is_array($formteacher)==false && is_array($course)==false ){
+       ?>
+       <tr>
+       <td><?php echo $row['id'] ?></td>
+       <td><?php echo $row['teach_id'] ?></td>
+       <td><?php echo $row['firstname'] ?></td>
+       <td><?php echo $row['lastname'] ?></td>
+     <td><?php echo $row['course']?></td>
+       <td><?php echo $row['password'] ?></td>
+       <td><?php echo $row['formteacher']?></td>
+   </tr>
+   <?php
+     }
+     else if (is_array($course)==false && is_array($formteacher)==true ){
+       ?>
+       <tr>
+       <td><?php echo $row['id'] ?></td>
+       <td><?php echo $row['teach_id'] ?></td>
+       <td><?php echo $row['firstname'] ?></td>
+       <td><?php echo $row['lastname'] ?></td>
+     <td><?php echo $row['course']?></td>
+       <td><?php echo $row['password'] ?></td>
+       <td><?php foreach($formteacher as $key =>$value){echo " $value ";}?></td>
+   </tr>
+   <?php
+     }
+
 }
-} else{
+}
+ else{
 
     // Basic example of PHP script to handle with jQuery-Tabledit plug-in.
     // Note that is just an example. Should take precautions such as filtering the input data.

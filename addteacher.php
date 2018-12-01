@@ -59,8 +59,7 @@
                     <th>Last Name</th>
                     <th>Course</th>
                     <th>Password</th>
-
-
+                    <th>Form Teacher</th>
                 </tr>
             </thead>
             <tbody id='tablebody'>
@@ -125,13 +124,14 @@
                   <option>English B</option>
               </select>
             </div>
-            <div class="checkbox" id="checkboxes">
-              <label><input type="checkbox" value="">Form Teacher</label>
+
+            <div class="checkbox" id="checkboxes" class="form-group">
+              <label><input type="checkbox" value="" name="c1"  id="c1" onclick="showMe('classes')">Form Teacher</label>
             </div>
             <div class="form-group" id="classes" style="display:none;">
               <label for="sel12">Class</label>
-              <select class="form-control" id="class" multiple size="10">
-                  option>1-1</option>
+              <select class="form-control" id="class" multiple size="12">
+                  <option>1-1</option>
                   <option>1-2</option>
                   <option>2-1</option>
                   <option>2-2</option>
