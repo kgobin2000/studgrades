@@ -14,15 +14,16 @@ if($page=='view'){
       $course=unserialize($row['courseid']);
       $formteacher=unserialize($row['formteacher']);
       if (is_array($course)==true && is_array($formteacher)==true ){
+
         ?>
         <tr>
             <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['teach_id'] ?></td>
             <td><?php echo $row['firstname'] ?></td>
-            <td><?php echo $row['lastname'] ?></td>
-          <td><?php foreach($course as $key =>$value){echo " $value ";}?></td>
-            <td><?php echo $row['password'] ?></td>
-            <td><?php foreach($formteacher as $key =>$value){echo " $value ";}?></td>
+            <td><?php echo $row['lastname']; ?></td>
+          <td><?php foreach($course as $key =>$value){echo " $value ";};?></td>
+            <td><?php echo $row['password']; ?></td>
+            <td><?php foreach($formteacher as $key =>$value){echo " $value ";};?></td>
         </tr>
 <?php
      }
@@ -33,7 +34,7 @@ if($page=='view'){
        <td><?php echo $row['teach_id'] ?></td>
        <td><?php echo $row['firstname'] ?></td>
        <td><?php echo $row['lastname'] ?></td>
-     <td><?php foreach($course as $key =>$value){echo " $value ";}?></td>
+     <td><?php foreach($course as $key =>$value){echo " $value ";};?></td>
        <td><?php echo $row['password'] ?></td>
        <td><?php echo $row['formteacher']?></td>
    </tr>
@@ -61,7 +62,7 @@ if($page=='view'){
        <td><?php echo $row['lastname'] ?></td>
      <td><?php echo $row['course']?></td>
        <td><?php echo $row['password'] ?></td>
-       <td><?php foreach($formteacher as $key =>$value){echo " $value ";}?></td>
+       <td><?php foreach($formteacher as $key =>$value){echo " $value ";};?></td>
    </tr>
    <?php
      }
