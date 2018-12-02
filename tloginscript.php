@@ -32,7 +32,6 @@
              $_SESSION['lastname'] = $lastname;
              $_SESSION['firstname'] = $firstname;
              $_SESSION['course'] = $course;
-             $_SESSION['formteacher'] = $row['formteacher'];
               die("1");
            }
            else

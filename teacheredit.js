@@ -104,7 +104,7 @@
             },
             columns: {
                 identifier: [0, 'id'],
-                editable: [[1, 'teach_id'],[2, 'firstname'],[3, 'lastname'], [5, 'password']],
+                editable: [[1, 'teach_id'],[2, 'firstname'],[3, 'lastname'], [5, 'password'],[6, 'formteacher']],
 
                 //[4, 'courseid','{"generalmath": "Mathematics", "integratedscie": "Integrated Science", "biology": "Biology","physics": "Physics", "chemistry": "Chemistry", "poa": "Principles of Accounts","pob": "Principles of Business", "pe": "Physical Education", "re": "Religious Education","moraled": "Moral Education", "language": "English A", "literature": "English B", "ALL":"ALL"}'],
 
@@ -125,6 +125,51 @@
             }
         });
     };
+
+    $(document).ready(function(){
+     $('#insert_form').on("submit", function(event){
+      event.preventDefault();
+
+      var formdata = $('#insert_form').serialize();
+      console.log(formdata);
+        firstname = $('#firstname').val();
+        lastname = $('#lastname').val();
+        teacherid=$('#teacherid').val();
+        course=$('#course').val();
+        console.log(course);
+        password=$('#password').val();
+        var x = document.getElementById("c1").checked;
+        if(x=='false'){
+        formteach=$('#class').val();
+        }
+        else {
+        formteach=$('#class').val();
+        }
+        console.log(firstname,lastname,teacherid,course,password,x,formteach);
+       $.ajax({
+        url:"teachinsert.php",
+        type:"POST",
+        data:{firstname:firstname,teacherid:teacherid,lastname:lastname,course:course,password:password,formteach:formteach},
+        beforeSend:function(){
+         $('#insert').val("Inserting");
+        },
+        success:function(data){
+          if (data ==1 )
+          {
+            alert("Username already taken");
+          }
+          else {
+
+         $('#insert_form')[0].reset();
+         $('#myModal').modal('hide');
+
+         viewData();
+         console.log(data);
+       }
+        }
+       });
+     })
+   })
 
 
   //$(document).ready(function(){

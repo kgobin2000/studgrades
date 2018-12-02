@@ -5,7 +5,6 @@ if ( isset( $_SESSION['teach_id']) && isset( $_SESSION['firstname']) && isset( $
 {
 
   $course=unserialize($_SESSION['course']);
-  $formteacher=unserialize($_SESSION['formteacher']);
 
 }
 else
@@ -78,36 +77,14 @@ echo "<script>window.location.replace('teacherlogin.php');</script>";
      echo $_SESSION['course'];
    }
    ?>
-   Form Teacher:
-   <?php
-   if (is_array($formteacher)){
-
- foreach($formteacher as $key =>$value)
- {
-   echo " $value ";
- }
-}
-else
-{
- echo $formteacher;
-}
-?>
  </blockquote>
    </div>
-   <div class="btn-group btn-group-lg col-md-4 ">
-   <div id="grades" style="visibility:visible;position:absolute;z-index: 1;" >
-      <button id="toggle" type="button" class="btn btn-primary">Grades</button>
-   </div>
-   <div id="ratings"  style="visibility:hidden;position:absolute;z-index:2;" >
-      <button id="toggle1" type="button" class="btn btn-primary">Ratings</button>
-   </div>
- </div>
 
  </br></br>
- <div id="divtable" class="container" >
+ <div id="divtable" class="container"">
  <div class="panel panel-primary">
    <div class="panel-heading">
-     <h3 class="panel-title">Grades</h3>
+     <h3 class="panel-title">Records</h3>
    </div>
    <div class="panel-body">
  <table id="tabledit" class="table table-hover table-responsive  table-striped" >
@@ -139,48 +116,6 @@ else
 
      </tbody>
  </table>
-</div>
-</div>
-</div>
-
-<div id="resultstable" class="container" >
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Ratings</h3>
-  </div>
-  <div class="panel-body">
-<table id="resultsedit" class="table table-hover table-responsive  table-striped" >
-
-    <thead>
-<tr class="myHead">
-            <th>#</th>
-            <th>Student ID</th>
-             <th>First Name</th>
-             <th>Last Name</th>
-             <th>Class</th>
-             <th>Course</th>
-            <th>Ability</th>
-            <th>Effort</th>
-            <th>Result</th>
-            <th>Ability</th>
-            <th>Effort</th>
-            <th>Result</th>
-            <th>Ability</th>
-            <th>Effort</th>
-            <th>Result</th>
-
-
-</tr>
-    </thead>
-    <tbody id='resultsbody'>
-      <script>
-      viewresultsData();
-      </script>
-
-    </tbody>
-</table>
-</div>
-</div>
 </div>
  </body>
 
