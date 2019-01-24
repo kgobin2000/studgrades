@@ -31,67 +31,38 @@ if($page=='view'){
     $size=sizeof($course);
     for ($i=0;$i<$size;$i++)
     {
-      $result = $mysqli->query("SELECT * FROM stud_rec WHERE course='$course[$i]'");
+      $result = $mysqli->query("SELECT * FROM stud_ratings WHERE course='$course[$i]'");
       while($row = $result->fetch_assoc()){
-              $newresult = $mysqli->query("SELECT * FROM stud_info WHERE stud_id=".$row['stud_id']."");
-              $ratings = $mysqli->query("SELECT * FROM stud_ratings WHERE stud_id=".$row['stud_id']."");
-              $row2=$ratings->fetch_assoc();
+        $studid=$row['stud_id'];
+          $newresult = $mysqli->query("SELECT * FROM `stud_info` WHERE stud_id='$studid'");
+
+
               $row1=$newresult->fetch_assoc();
           ?>
           <tr>
-              <td><?php echo $row2['id'] ?></td>
+              <td><?php echo $row['id'] ?></td>
               <td><?php echo $row['stud_id'] ?></td>
               <td><?php echo $row1['f_name'] ?></td>
                 <td><?php echo $row1['l_name'] ?></td>
                   <td><?php echo $row1['Class'] ?></td>
               <td><?php echo $row['course'] ?></td>
-              <td><?php echo $row2['ab1'] ?></td>
-            <td><?php echo $row2['ef1'] ?></td>
-              <td><?php echo $row2['res1'] ?></td>
-              <td><?php echo $row2['ab2'] ?></td>
-            <td><?php echo $row2['ef2'] ?></td>
-              <td><?php echo $row2['res2'] ?></td>
-              <td><?php echo $row2['ab33'] ?></td>
-            <td><?php echo $row2['ef3'] ?></td>
-              <td><?php echo $row2['res3'] ?></td>
+              <td><?php echo $row['ab1'] ?></td>
+            <td><?php echo $row['ef1'] ?></td>
+              <td><?php echo $row['res1'] ?></td>
+              <td><?php echo $row['ab2'] ?></td>
+            <td><?php echo $row['ef2'] ?></td>
+              <td><?php echo $row['res2'] ?></td>
+              <td><?php echo $row['ab3'] ?></td>
+            <td><?php echo $row['ef3'] ?></td>
+              <td><?php echo $row['res3'] ?></td>
           </tr>
           <?php
       }
     }
   }
 
-    else {
 
 
-    $result = $mysqli->query("SELECT * FROM stud_rec WHERE course='$course1'");
-
-    while($row = $result->fetch_assoc()){
-      $newresult = $mysqli->query("SELECT * FROM stud_info WHERE stud_id=".$row['stud_id']."");
-      $ratings = $mysqli->query("SELECT * FROM stud_ratings WHERE stud_id=".$row['stud_id']."");
-      $row2=$ratings->fetch_assoc();
-      $row1=$newresult->fetch_assoc();
-        ?>
-        <tr>
-            <td><?php echo $row2['id'] ?></td>
-            <td><?php echo $row['stud_id'] ?></td>
-            <td><?php echo $row1['f_name'] ?></td>
-              <td><?php echo $row1['l_name'] ?></td>
-                <td><?php echo $row1['Class'] ?></td>
-            <td><?php echo $row['course'] ?></td>
-            <td><?php echo $row2['ab1'] ?></td>
-          <td><?php echo $row2['ef1'] ?></td>
-            <td><?php echo $row2['res1'] ?></td>
-            <td><?php echo $row2['ab2'] ?></td>
-          <td><?php echo $row2['ef2'] ?></td>
-            <td><?php echo $row2['res2'] ?></td>
-            <td><?php echo $row2['ab33'] ?></td>
-          <td><?php echo $row2['ef3'] ?></td>
-            <td><?php echo $row2['res3'] ?></td>
-        </tr>
-        <?php
-    }
-  }
-}
  else{
 
     // Basic example of PHP script to handle with jQuery-Tabledit plug-in.
@@ -129,5 +100,6 @@ if($page=='view'){
 
     echo json_encode($input);
 
+}
 }
 ?>

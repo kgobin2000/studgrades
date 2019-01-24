@@ -33,7 +33,8 @@ if($page=='view'){
     {
       $result = $mysqli->query("SELECT * FROM stud_rec WHERE course='$course[$i]'");
       while($row = $result->fetch_assoc()){
-              $newresult = $mysqli->query("SELECT * FROM stud_info WHERE stud_id=".$row['stud_id']."");
+            $studid=$row['stud_id'];
+              $newresult = $mysqli->query("SELECT * FROM `stud_info` WHERE stud_id='$studid'");
               $row1=$newresult->fetch_assoc();
           ?>
           <tr>
@@ -64,7 +65,8 @@ if($page=='view'){
     $result = $mysqli->query("SELECT * FROM stud_rec WHERE course='$course1'");
 
     while($row = $result->fetch_assoc()){
-            $newresult = $mysqli->query("SELECT * FROM stud_info WHERE stud_id=".$row['stud_id']."");
+      $studid=$row['stud_id'];
+        $newresult = $mysqli->query("SELECT * FROM `stud_info` WHERE stud_id='$studid'");
             $row1=$newresult->fetch_assoc();
         ?>
         <tr>

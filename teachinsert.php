@@ -38,6 +38,7 @@
     $sql =  "INSERT INTO admin (teach_id, firstname, lastname, courseid, password,formteacher) VALUES ('$teacherid','$firstname','$lastname','$course','$password','$formteach');";
 
     $result=mysqli_query($conn,$sql);
+  
 
 
 

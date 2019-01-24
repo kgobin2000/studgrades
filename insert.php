@@ -44,9 +44,22 @@
     $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, exam1, final1,coursework2, exam2, final2,coursework3, exam3, final3) VALUES ('$stud_id','Moral Education','','','','','','','','','');";
     $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, exam1, final1,coursework2, exam2, final2,coursework3, exam3, final3) VALUES ('$stud_id','English A','','','','','','','','','');";
     $sql .= "INSERT INTO stud_rec (stud_id, course, coursework1, exam1, final1,coursework2, exam2, final2,coursework3, exam3, final3) VALUES ('$stud_id','English B','','','','','','','','','');";
-    $sql .= "INSERT INTO stud_ratings (stud_id,ab1, ef1, res1, ab2, ef2,res2, ab3, ef3,res2) VALUES ('$stud_id','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Integrated Science','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Integrated Science','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Biology','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Physics','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Chemistry','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Principles of Accounts','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Principles of Business','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Physical Education','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Religious Education','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','Moral Education','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','English A','','','','','','','','','');";
+    $sql .= "INSERT INTO stud_ratings(stud_id, course, ab1, ef1, res1, ab2, ef2, res2, ab3, ef3, res3) VALUES ('$stud_id','English B','','','','','','','','','');";
+
 
     $result=mysqli_multi_query($conn,$sql);
+
 
 
 
